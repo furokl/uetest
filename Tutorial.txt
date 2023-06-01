@@ -1,4 +1,71 @@
 -------------------------------------------------------------------------------
+Инструменты / Ассеты / Помощники
+-------------------------------------------------------------------------------
+Текстуры и модели
+	https://polyhaven.com/
+
+
+
+
+-------------------------------------------------------------------------------
+Конвеция наименований
+-------------------------------------------------------------------------------
+Asset
+	HDR_	- HDRI
+	M_		- Material
+	MI_		- Material Instance
+	PHYS_	- Physics Asset
+	PM_		- Physics Material
+	PPM_	- Post Process Material
+	SK_		- Skeletal Mesh
+	SM_		- Static Mesh
+	T_		- Texture
+	OCIO_	- OCIO Profile
+
+Blueprints
+	AC_		- Actor Component
+	ABP_	- Animation Blueprint
+	BI_		- Blueprint Interface
+	BP_		- Blueprint
+	CT_		- Curve Table
+	DT_		- Data Table
+	E_		- Enum
+	F_		- Structure
+	WBP_	- Widget Blueprint
+
+Particle Effects
+	FXE_	- Niagara Emitter
+	FXS_	- Niagara System
+	FXF_	- Niagara Function
+
+Skeletal Mesh Animations
+	Rig_	- Rig
+	SKEL_	- Skeleton
+	AM_		- Montages
+	AS_		- Animation Sequence
+	BS_		- Blend Space
+
+ICVFX
+	NDC_	- NDisplay Configuration
+
+Animation
+	LS_		- Level Sequence
+	EDIT_	- Sequencer Edits
+
+Media
+	MS_		- Media Source
+	MO_		- Media Output
+	MP_		- Media Player
+	MPR_	- Media Profile
+
+Other
+	SNAP_	- Level Snapshots
+	RCP_	- Remote Control Preset
+
+
+
+
+-------------------------------------------------------------------------------
 Сцена
 -------------------------------------------------------------------------------
 Камера
@@ -9,6 +76,7 @@
 	G						- спрятать значки
 	alt + ЛКМ				- вращение вокруг точки
 	alt + ПКМ				- зум вокруг точки
+	ctrl(правый) + L + ЛКМ	- управлять глобальным светилом
 	shift + transparent		- переместить объект с фиксацией камеры за объектом
 	F11						- fullscreen
 
@@ -35,7 +103,7 @@
 		Шаг Scale
 
 Неприятности
-	Alt + F		- Черное небо
+	Alt + F		- Черное небо (Отключение атмосферы)
 
 
 
@@ -43,28 +111,47 @@
 -------------------------------------------------------------------------------
 Освещение
 -------------------------------------------------------------------------------
-Add Obj - Volumes - Post Process Volume
-	Внутри этой территории будет определенный уровень освещенности
-	Настройка:
-		Details 
-			Exposure:
-				Matering Mode			- Manual
-				Exposure Compensation	- {value}
+Point Light / Spot Light / Rect Light
+	Details
+		Light
+			Intensity			- яркость			(отчетливость)
+			Source Radius		- размер светила	(тени становятся мягче)
+			Attenuation Radius	- до куда светит	(видимость)
 
-			Post Process Volume Settings
-			(Для настройки на всю территорию)
-				Infinite Extend (Unbound) - true
+Стандартный набор освещения (Солнце)
+!ctrl(правый) + L + ЛКМ			- управлять глобальным светилом 
+	Directional Light
+		Mobility				- Movable
+		Atmosphere Sun Light	- true
+	Sky Atmosphere
+		Mobility				- Movable
+	Sky Light
+		Mobility				- Movable
+		Real Time Capture		- true
 
-	! Также нужно чтобы Lit - Game Setting = true
-	  Иначе будет стоять глобальное значение EV100
+Экспозиция
+	Add Obj - Volumes - Post Process Volume
+		Внутри этой территории будет определенный уровень освещенности
+		Настройка:
+			Details 
+				Exposure:
+					Matering Mode			- Manual
+					Exposure Compensation	- {value}
+
+				Post Process Volume Settings
+				(Для настройки на всю территорию)
+					Infinite Extend (Unbound) - true
+
+		! Также нужно чтобы Lit - Game Setting = true
+		  Иначе будет стоять глобальное значение EV100
 
 
 
 
 -------------------------------------------------------------------------------
-Материалы
+Материалы / Текстуры / Мешы
 -------------------------------------------------------------------------------
-! Перед импортом, проверить
+! Перед импортом текстуры, проверить
 Base Color
 	Texture
 		sRGB - true
@@ -82,6 +169,19 @@ Normal
 Roughness
 	Texture
 		sRGB - false
+
+
+! Перед импортом fbx
+Material
+	Material Import Method	- Do Not Create Material
+	Import Textures			- false
+
+
+
+
+-------------------------------------------------------------------------------
+Ландшафт
+-------------------------------------------------------------------------------
 
 
 
@@ -102,10 +202,3 @@ Blueprints
 	ПКМ
 		Convert To Parametr - установить как параметр
 			(можно будет менять из вкладки details и в свойстве нода)
-
-
--------------------------------------------------------------------------------
-Конвеция наименований
--------------------------------------------------------------------------------
-M_	- Material
-MI_ - Material Instance
