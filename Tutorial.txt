@@ -3,6 +3,7 @@
 -------------------------------------------------------------------------------
 Текстуры и модели
 	https://polyhaven.com/
+	ctrl + space - Add - Quixel Bridge
 
 
 
@@ -205,6 +206,17 @@ Sculpt
 		Smooth		- сглаживание
 		Flatten		- заострить (сгладить к среднему значению)
 
+Paint
+	Создаем материал (В SelectionMode shift + 1)
+		В нем ноду Landscape Layer Blend
+			Добавляем будущие "краски", Details - Layer+
+		Чтобы залить текстуры:
+			Используем ноду Make Material Attributes
+			В главной ноде ставим Material - Use Material Attributes = true
+
+	Внедряем (В LandscapeMode shift + 2)
+		Paint - Layers, рядом с материалами жмак +
+			Weight-Blended Layer
 
 
 
