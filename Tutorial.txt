@@ -76,7 +76,7 @@ Other
 	G						- спрятать значки
 	alt + ЛКМ				- вращение вокруг точки
 	alt + ПКМ				- зум вокруг точки
-	ctrl(правый) + L + ЛКМ	- управлять глобальным светилом
+	ctrl(правый) + L + ЛКМ	- управлять глобальным светилом (зажать)
 	shift + transparent		- переместить объект с фиксацией камеры за объектом
 	F11						- fullscreen
 
@@ -119,15 +119,20 @@ Point Light / Spot Light / Rect Light
 			Attenuation Radius	- до куда светит	(видимость)
 
 Стандартный набор освещения (Солнце)
-!ctrl(правый) + L + ЛКМ			- управлять глобальным светилом 
-	Directional Light
-		Mobility				- Movable
-		Atmosphere Sun Light	- true
-	Sky Atmosphere
-		Mobility				- Movable
-	Sky Light
-		Mobility				- Movable
-		Real Time Capture		- true
+! ctrl(правый) + L + ЛКМ			- управлять глобальным светилом (зажать)
+! project settings: проверить Support Sky Atmosphere Affecting Height Fog = true
+	Lights
+		Directional Light
+			Mobility				- Movable
+			Atmosphere Sun Light	- true
+		Sky Atmosphere
+			Mobility				- Movable
+		Sky Light
+			Mobility				- Movable
+			Real Time Capture		- true
+	Visual Effects
+		Volumetric Cloud
+		Exponentional Height Fox
 
 Экспозиция
 	Add Obj - Volumes - Post Process Volume
@@ -182,6 +187,23 @@ Material
 -------------------------------------------------------------------------------
 Ландшафт
 -------------------------------------------------------------------------------
+Слева сверху переходим в режим редактирования ландшафта:
+	Select Mode - Landscape (shift + 2)
+
+Manage
+	Здесь создаем свой Terrain, настройки интуитивно понятны
+
+Sculpt
+	Управление
+		] или [		- изменение размера кисти (brush size)
+		ЛКМ			- выпукливать
+		ЛКМ + SHIFT	- выдавливать наружу
+
+	Кисти
+		Skulpt		- основа
+		Erase		- возвращение в первичный облик
+		Smooth		- сглаживание
+		Flatten		- заострить (сгладить к среднему значению)
 
 
 
