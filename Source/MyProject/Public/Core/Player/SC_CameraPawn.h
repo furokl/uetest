@@ -4,16 +4,16 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
-#include "RaytraceCamera.generated.h"
+#include "SC_CameraPawn.generated.h"
 
 UCLASS()
-class MYPROJECT_API ARaytraceCamera : public APawn
+class MYPROJECT_API ASC_CameraPawn : public APawn
 {
 	GENERATED_BODY()
 
 public:
 	// Sets default values for this pawn's properties
-	ARaytraceCamera();
+	ASC_CameraPawn();
 
 protected:
 	// Called when the game starts or when spawned

@@ -1,5 +1,17 @@
-# Visual Studio 2015 user specific files
+# --------------------------------------------------
+# Custom .gitignore
+# --------------------------------------------------
+
+# IDE
 .vs/
+.idea
+
+# Default Settings
+/Config/DefaultEditorSettings.ini
+
+# --------------------------------------------------
+# MSVC Unreal Engine .gitignore template
+# --------------------------------------------------
 
 # Compiled Object files
 *.slo
@@ -72,4 +84,3 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
-/.idea/.idea.MyProject/.idea
